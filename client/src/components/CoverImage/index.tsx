@@ -33,7 +33,7 @@ export const CoverImage = () => {
   )
 
   return (
-    <div className='Container'>
+    <div className='CoverImage_Container'>
       {file.length > 1 ? (
         <PreviewContainer file={file} handleCancel={handleCancel} />
       ) : (
