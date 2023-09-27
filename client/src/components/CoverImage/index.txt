@@ -1,0 +1,99 @@
+
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import { useState } from 'react'
+import { CloseOutlined } from '@ant-design/icons'
+import { Button, Upload } from 'antd'
+import type { RcFile, UploadProps } from 'antd/es/upload'
+import type { UploadFile } from 'antd/es/upload/interface'
+
+import './index.scss'
+import { UploadTrayIcon } from '@/globals/icons'
+
+
+export const CoverImage = () => {
+  const getBase64 = (file: RcFile): Promise<string> =>
+    new Promise((resolve, reject) => {
+      const reader = new FileReader()
+      reader.readAsDataURL(file)
+      reader.onload = () => resolve(reader.result as string)
+      reader.onerror = (error) => reject(error)
+    })
+
+  const [previewOpen, setPreviewOpen] = useState(false)
+  const [previewImage, setPreviewImage] = useState('')
+  const [previewTitle, setPreviewTitle] = useState('')
+  const [fileList, setFileList] = useState<UploadFile[]>([])
+  const [file, setFile] = useState('')
+
+  const handleCancel = () => {
+    setPreviewOpen(false)
+    setFile('')
+  }
+
+  const handlePreview = async (file: UploadFile) => {
+    if (!file.url && !file.preview) {
+      file.preview = await getBase64(file.originFileObj as RcFile)
+    }
+
+    setPreviewImage(file.url || (file.preview as string))
+    setPreviewOpen(true)
+    setPreviewTitle(file.name || file.url!.substring(file.url!.lastIndexOf('/') + 1))
+  }
+
+  const handleChange: UploadProps['onChange'] = ({ fileList: newFileList }) =>
+    setFileList(newFileList)
+
+  const uploadButton = (
+    <div style={{ display: 'flex', flexDirection: 'column', justifyItems: 'center', alignItems: 'center' }}>
+      <UploadTrayIcon className='upload_icon' />
+      <div style={{ fontSize: '14px', fontWeight: 600, fontFamily: 'poppins' }}>Upload Cover Image</div>
+      <p className='upload_info'>16:9 ratio is recommended. Max image size 1mb</p>
+    </div>
+  )
+
+  console.log({ file })
+
+  return (
+    <div className='Container'>
+      {file.length > 1 ? (
+        <PreviewContainer file={file} handleCancel={handleCancel} />
+      ) : (
+        <div className="coverImage">
+          <div className="header"></div>
+          <div className='content'>
+            <div className='uploadContainer'>
+              <Upload
+                // action={'http://localhost:5173'}
+                // listType="picture-card"
+                // onPreview={handlePreview}
+                // onChange={handleChange}
+                beforeUpload={async (file) => {
+                  const res = await getBase64(file)
+                  setFile(res)
+                  return false
+                }}
+                showUploadList={{ showRemoveIcon: false, showPreviewIcon: false, showDownloadIcon: false }}
+              >
+                {uploadButton}
+              </Upload>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  )
+}
+
+const PreviewContainer = ({ file, handleCancel }: { file: string, handleCancel: () => void }) => {
+  return (
+    <div className='preview_image-container'>
+      <div className=''>
+        <img src={file} alt='preview img' />
+      </div>
+      <div className='remove-element' onClick={() => handleCancel()}>
+        <CloseOutlined />
+        <span>Delete & Reupload</span>
+      </div>
+    </div>
+  )
+}
