@@ -2,7 +2,7 @@
   .coverImage {
     width: 59.5rem;
     max-width: 59.5rem;
-    box-shadow: 3px 3px 14px 0px rgba(190, 190, 190, 0.30);
+    box-shadow: 3px 3px 14px 0px rgba(190, 190, 190, 0.3);
     border-radius: 2rem;
     font-family: poppins;
 
@@ -53,7 +53,7 @@
 
   .cover-image_header {
     height: 7.7rem;
-    background-color: #D0F7FA;
+    background-color: #d0f7fa;
     border-top-left-radius: 2rem;
     border-top-right-radius: 2rem;
     display: flex;
@@ -71,7 +71,7 @@
     max-width: 59.5rem;
     height: fit-content;
     position: relative;
-    box-shadow: 3px 3px 14px 0px rgba(190, 190, 190, 0.30);
+    box-shadow: 3px 3px 14px 0px rgba(190, 190, 190, 0.3);
     border-radius: 2rem;
     font-family: poppins;
 
@@ -88,12 +88,12 @@
   }
 
   .remove-element {
-    border-top: 1px solid #CCC;
+    border-top: 1px solid #ccc;
     font-size: 1.4rem;
     font-weight: 600;
     display: flex;
     gap: 2rem;
-    color: #A80000;
+    color: #a80000;
     padding: 2.6rem 2.7rem;
     cursor: pointer;
   }

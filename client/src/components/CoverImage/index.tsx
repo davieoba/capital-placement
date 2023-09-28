@@ -38,9 +38,9 @@ export const CoverImage = () => {
         <PreviewContainer file={file} handleCancel={handleCancel} />
       ) : (
         <div className="coverImage">
-          <div className="cover-image_header">
+            <header className="cover-image_header">
             <h3>Upload Cover Image</h3>
-          </div>
+            </header>
           <div className='content'>
             <div className='uploadContainer'>
               <Upload
@@ -64,9 +64,9 @@ export const CoverImage = () => {
 const PreviewContainer = ({ file, handleCancel }: { file: string, handleCancel: () => void }) => {
   return (
     <div className='preview_image-container'>
-      <div className="cover-image_header">
+      <header className="cover-image_header">
         <h3>Upload Cover Image</h3>
-      </div>
+      </header>
       <div>
         <div className='image-wrapper'>
           <img src={file} alt='preview img' />
