@@ -14,6 +14,8 @@ exports.createPersonal = async (req, res) => {
       }
     })
 
+    // console.log(personalInfo)
+
     res.status(200).json({
       message: 'ok',
       data: personalInfo

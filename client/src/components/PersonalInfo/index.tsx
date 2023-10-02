@@ -8,12 +8,13 @@ import { SwitchContainer } from '../SwitchContainer'
 import { AdditionalQuestion } from '../AdditionalQuestion'
 import { Checkbox } from '../Checkbox'
 import { fetchPersonalData, Data } from '@/api';
+import { EditQuestion } from '../EditQuestion'
 
 export const PersonalInformation = () => {
   const [addForm, setAddForm] = useState<string | null>(null)
-  const { data, isLoading, isError, error } = useQuery<Data[], Error>(['get-personal-data'], fetchPersonalData)
+  const { data, isLoading, isError, error } = useQuery<Data, Error>(['get-personal-data'], fetchPersonalData)
 
-  console.log({ data })
+  console.log(data?.data)
 
   // const onChange = (e: CheckboxChangeEvent) => {
   //   console.log(`checked = ${e.target.checked}`)
@@ -127,6 +128,11 @@ export const PersonalInformation = () => {
             </div>
 
             {/* load personal info from the database */}
+            <div className='space-y-8'>
+              {data && data?.data.map((info) => {
+                return <EditQuestion type={info.personalQuestions.type} question={info.personalQuestions.question} setState={setAddForm} />
+              })}
+            </div>
 
             {/* include the new form here */}
             {addForm && <AdditionalQuestion setState={setAddForm} />}

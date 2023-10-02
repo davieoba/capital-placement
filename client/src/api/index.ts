@@ -1,55 +1,58 @@
 // api.ts
 export interface Data {
   // Define your data structure here
-  _id: string
-  __v?: number
-  firstName: {
-    internalUse: boolean,
-    show: true
-  },
-  lastName: {
-    internalUse: boolean,
-    show: boolean
-  },
-  emailId: {
-    internalUse: boolean,
-    show: boolean
-  },
-  phoneNumber: {
-    internalUse: boolean,
-    show: boolean
-  },
-  nationality: {
-    internalUse: boolean,
-    show: boolean
-  },
-  currentResidence: {
-    internalUse: boolean,
-    show: boolean
-  },
-  idNumber: {
-    internalUse: boolean,
-    show: boolean
-  },
-  dateOfBirth: {
-    internalUse: boolean,
-    show: boolean
-  },
-  gender: {
-    internalUse: boolean,
-    show: boolean
-  },
-  personalQuestions: {
-    type: string,
-    question: string,
-    choices: string[],
-    maxChoice: number,
-    disqualify: boolean,
-    other: boolean
-  },
+  data: {
+    _id: string
+    __v?: number
+    firstName: {
+      internalUse: boolean,
+      show: true
+    },
+    lastName: {
+      internalUse: boolean,
+      show: boolean
+    },
+    emailId: {
+      internalUse: boolean,
+      show: boolean
+    },
+    phoneNumber: {
+      internalUse: boolean,
+      show: boolean
+    },
+    nationality: {
+      internalUse: boolean,
+      show: boolean
+    },
+    currentResidence: {
+      internalUse: boolean,
+      show: boolean
+    },
+    idNumber: {
+      internalUse: boolean,
+      show: boolean
+    },
+    dateOfBirth: {
+      internalUse: boolean,
+      show: boolean
+    },
+    gender: {
+      internalUse: boolean,
+      show: boolean
+    },
+    personalQuestions: {
+      type: string,
+      question: string,
+      choices: string[],
+      maxChoice: number,
+      disqualify: boolean,
+      other: boolean
+    }
+  }[]
+
 }
 
-export async function fetchPersonalData(): Promise<Data[]> {
+export async function fetchPersonalData(): Promise<Data> {
   const response = await fetch('http://localhost:5000/api/v1/personal')
   if (!response.ok) {
     throw new Error('Failed to fetch data')
