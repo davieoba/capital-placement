@@ -94,10 +94,13 @@ export const PersonalInformation = () => {
             {addForm && <AdditionalQuestion setState={setAddForm} />}
 
             <div className='add-question-container'>
-              <div className='add-question-btn' onClick={() => {
+              <div
+                className='add-question-btn'
+                onClick={() => {
                 const key = uuidv4()
                 setAddForm(key)
-              }}>
+                }}
+              >
                 <PlusOutlined style={{ fontSize: '2.4rem' }} />
                 <label className=''>Add a question</label>
               </div>

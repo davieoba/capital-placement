@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <Sidebar />
-      <main className="main space-y-12">
+      <main className="main space-y-24">
         <CoverImage />
         <PersonalInformation />
         <PersonalProfile />
