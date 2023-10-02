@@ -19,7 +19,7 @@ export const AdditionalQuestion = ({ setState }: Props) => {
 
   const handleChangeOfQuestion = () => {
     if (currentQuestion === 'paragraph') {
-      return <Paragraph setState={setState} />
+      return <Paragraph setState={setState} edit={false} />
     } else if (currentQuestion === 'multipleChoice') {
       return <MultipleChoice setState={setState} />
     } else if (currentQuestion === 'dropdown') {

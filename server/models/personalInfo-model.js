@@ -95,7 +95,7 @@ const personalInfoSchema = new mongoose.Schema({
     type: {
       type: String,
       enum: ["paragraph", "shortAnswer", "yes/no", "dropdown", "multipleChoice", "date", "number", "fileUpload", "videoQuestion"],
-      default: "Paragraph"
+      default: "paragraph"
     },
     question: {
       type: String,

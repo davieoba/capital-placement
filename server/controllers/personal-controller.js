@@ -2,12 +2,13 @@ const PersonalInfo = require('../models/personalInfo-model')
 
 exports.createPersonal = async (req, res) => {
   try {
+    console.log(req.body)
     const personalInfo = await PersonalInfo.create({
       ...req.body,
       personalQuestions: {
         type: req.body.type,
         question: req.body.question,
-        choices: [...req.body.choices],
+        choices: [req.body.choices],
         maxChoice: req.body.maxChoice,
         disqualify: req.body.disqualify,
         other: req.body.other

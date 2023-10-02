@@ -52,7 +52,15 @@ export interface Data {
       other: boolean
     }
   }[]
+}
 
+interface IQuestion {
+  type: string,
+  question: string,
+  choices?: string[],
+  maxChoice?: number,
+  disqualify?: boolean,
+  other?: boolean
 }
 
 export async function fetchPersonalData(): Promise<Data> {
@@ -72,4 +80,15 @@ export const editPersonalData = async (newItem: string, id: string): Promise<Dat
     throw new Error('Failed to fetch data')
   }
   return response.data
+}
+
+export const createPersonalData = async (newItem: IQuestion): Promise<Data> => {
+  const response = await axios.post(`http://localhost:5000/api/v1/personal`, newItem)
+
+  if (!response.status === true) {
+    throw new Error('Failed to fetch data')
+  }
+
+  return response.data
+
 }
