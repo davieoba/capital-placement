@@ -8,6 +8,7 @@ import { Paragraph } from '../Questions/Paragraph'
 import { MultipleChoice } from '../Questions/MultipleChoice'
 import { Dropdown } from '../Questions/Dropdown'
 import { OptionQuestion } from '../Questions/OptionQuestion'
+import { VideoQuestion } from '../Questions/VideoQuestion'
 
 type Props = {
   setState: React.Dispatch<React.SetStateAction<string | null>>
@@ -25,6 +26,8 @@ export const AdditionalQuestion = ({ setState }: Props) => {
       return <Dropdown setState={setState} />
     } else if (currentQuestion === 'yes/no') {
       return <OptionQuestion setState={setState} />
+    } else if (currentQuestion === 'videoQuestion') {
+      return <VideoQuestion setState={setState} />
     }
   }
 

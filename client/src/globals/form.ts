@@ -9,3 +9,8 @@ export const additionalQuestionOptions = [
   { value: 'fileUpload', label: 'File Upload' },
   { value: 'videoQuestion', label: 'Video Question' }
 ]
+
+export const selectVideoTime = [
+  { value: 'seconds', label: 'second' },
+  { value: 'minutes', label: 'minutes' },
+]

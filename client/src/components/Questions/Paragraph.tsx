@@ -1,3 +1,4 @@
+import { useState } from "react"
 import { Input } from "antd"
 import { CloseOutlined } from '@ant-design/icons'
 
@@ -8,6 +9,13 @@ type Props = {
 }
 
 export const Paragraph = ({ setState }: Props) => {
+  // state for paragraph form
+  const [paragraphQuestion, setParagraphQuestion] = useState<string>('')
+
+  console.log(paragraphQuestion)
+
+  // handle the form for sending these values to my api
+
   return (
     <div className="Paragraph">
       <div>
@@ -15,6 +23,8 @@ export const Paragraph = ({ setState }: Props) => {
         <Input
           className="w-full h-[6.8rem] rounded-[0.5rem] text-[1.4rem] font-poppins"
           id='question'
+          onChange={(e) => setParagraphQuestion(e.target.value)}
+          value={paragraphQuestion}
         />
       </div>
 
