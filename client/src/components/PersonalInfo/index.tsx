@@ -130,7 +130,7 @@ export const PersonalInformation = () => {
             {/* load personal info from the database */}
             <div className='space-y-8'>
               {data && data?.data.map((info) => {
-                return <EditQuestion type={info.personalQuestions.type} question={info.personalQuestions.question} setState={setAddForm} />
+                return <EditQuestion type={info.personalQuestions.type} question={info.personalQuestions.question} id={info._id.toString()} setState={setAddForm} />
               })}
             </div>
 

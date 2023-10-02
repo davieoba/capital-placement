@@ -1,3 +1,6 @@
+import axios from "axios"
+
+
 // api.ts
 export interface Data {
   // Define your data structure here
@@ -60,60 +63,13 @@ export async function fetchPersonalData(): Promise<Data> {
   return response.json()
 }
 
-/**
- * {
-    "message": "ok",
-    "data": {
-        "firstName": {
-            "internalUse": boolean,
-            "show": true
-        },
-        "lastName": {
-            "internalUse": boolean,
-            "show": false
-        },
-        "emailId": {
-            "internalUse": false,
-            "show": false
-        },
-        "phoneNumber": {
-            "internalUse": false,
-            "show": false
-        },
-        "nationality": {
-            "internalUse": false,
-            "show": false
-        },
-        "currentResidence": {
-            "internalUse": false,
-            "show": false
-        },
-        "idNumber": {
-            "internalUse": false,
-            "show": false
-        },
-        "dateOfBirth": {
-            "internalUse": false,
-            "show": false
-        },
-        "gender": {
-            "internalUse": false,
-            "show": false
-        },
-        "personalQuestions": {
-            "type": "paragraph",
-            "question": "some random question",
-            "choices": [
-                "a",
-                "b",
-                "c"
-            ],
-            "maxChoice": 2,
-            "disqualify": false,
-            "other": false
-        },
-        "_id": "651a5c6249e11f3796aca509",
-        "__v": 0
-    }
+// newItem, id: { newItem: string, id: number }
+export const editPersonalData = async (newItem: string, id: string): Promise<Data> => {
+  const response = await axios.patch(`http://localhost:5000/api/v1/personal/${id}`, {
+    data: newItem
+  })
+  if (!response.status === true) {
+    throw new Error('Failed to fetch data')
+  }
+  return response.data
 }
- */

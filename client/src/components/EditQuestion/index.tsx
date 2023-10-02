@@ -10,14 +10,15 @@ type QuestionProps = {
   type: string
   question: string
   setState: React.Dispatch<React.SetStateAction<string | null>>
+  id?: string
 }
 
-export const EditQuestion = ({ type, question, setState }: QuestionProps) => {
+export const EditQuestion = ({ type, question, setState, id }: QuestionProps) => {
   const [edit, setEdit] = useState<boolean>(false)
 
   const render = () => {
     if (type === 'paragraph') {
-      return <Paragraph setState={setState} />
+      return <Paragraph setState={setState} edit={edit} id={id} />
     } else if (type === 'multipleChoice') {
       return <MultipleChoice setState={setState} />
     } else if (type === 'dropdown') {
