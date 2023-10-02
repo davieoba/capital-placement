@@ -13,7 +13,7 @@ const userSchema = new mongoose.Schema({
     profile: Profile,
     customizedQuestion: [{
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'PersonalQuestion'
+      ref: 'Question'
     }]
   },
 })

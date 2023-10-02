@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const personalQuestionSchema = new mongoose.Schema({
+const QuestionSchema = new mongoose.Schema({
   type: {
     type: String,
     enum: ["paragraph", "shortAnswer", "yes/no", "dropdown", "multipleChoice", "date", "number", "fileUpload", "videoQuestion"],
@@ -13,7 +13,7 @@ const personalQuestionSchema = new mongoose.Schema({
   choices: [
     {
       type: String,
-      default: "string"
+      default: ""
     }
   ],
   maxChoice: {
@@ -30,7 +30,7 @@ const personalQuestionSchema = new mongoose.Schema({
   }
 })
 
-const PersonalQuestion = mongoose.model('PersonalQuestion', personalQuestionSchema)
+const Question = mongoose.model('PersonalQuestion', QuestionSchema)
 
-module.exports = PersonalQuestion
+module.exports = Question
 

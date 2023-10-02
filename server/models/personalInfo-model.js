@@ -94,7 +94,7 @@ const personalInfoSchema = new mongoose.Schema({
   personalQuestions: [
     {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'PersonalQuestion'
+      ref: 'Question'
     }
   ]
 })

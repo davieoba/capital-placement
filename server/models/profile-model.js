@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const PersonalQuestion = require('./personalQuestion-model')
+// const PersonalQuestion = require('./personalQuestion-model')
 
 const profileSchema = new mongoose.Schema({
   education: {
@@ -35,7 +35,7 @@ const profileSchema = new mongoose.Schema({
   profileQuestions: [
     {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'PersonalQuestion'
+      ref: 'Question'
     }
   ]
 })
