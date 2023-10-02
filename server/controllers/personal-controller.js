@@ -55,7 +55,9 @@ exports.getAPersonal = async (req, res) => {
 exports.editPersonal = async (req, res) => {
   try {
     const id = req.params.id
-    const editedPersonal = await PersonalInfo.findByIdAndUpdate(id, req.body, {
+
+
+    const editedPersonal = await PersonalInfo.findByIdAndUpdate(id, { personalQuestions: req.body }, {
       new: true
     })
 
