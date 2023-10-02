@@ -8,7 +8,7 @@ const QuestionSchema = new mongoose.Schema({
   },
   question: {
     type: String,
-    default: string
+    default: ""
   },
   choices: [
     {

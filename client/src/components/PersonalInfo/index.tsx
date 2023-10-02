@@ -1,14 +1,19 @@
 import { useState } from 'react'
 import { PlusOutlined } from '@ant-design/icons'
 import { v4 as uuidv4 } from 'uuid';
+import { useQuery } from '@tanstack/react-query';
 
 import './index.scss'
 import { SwitchContainer } from '../SwitchContainer'
 import { AdditionalQuestion } from '../AdditionalQuestion'
 import { Checkbox } from '../Checkbox'
+import { fetchPersonalData, Data } from '@/api';
 
 export const PersonalInformation = () => {
   const [addForm, setAddForm] = useState<string | null>(null)
+  const { data, isLoading, isError, error } = useQuery<Data[], Error>(['get-personal-data'], fetchPersonalData)
+
+  console.log({ data })
 
   // const onChange = (e: CheckboxChangeEvent) => {
   //   console.log(`checked = ${e.target.checked}`)
@@ -120,6 +125,8 @@ export const PersonalInformation = () => {
                 <SwitchContainer />
               </div>
             </div>
+
+            {/* load personal info from the database */}
 
             {/* include the new form here */}
             {addForm && <AdditionalQuestion setState={setAddForm} />}

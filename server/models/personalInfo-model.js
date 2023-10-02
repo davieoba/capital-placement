@@ -91,12 +91,35 @@ const personalInfoSchema = new mongoose.Schema({
       default: false
     }
   },
-  personalQuestions: [
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'Question'
+  personalQuestions: {
+    type: {
+      type: String,
+      enum: ["paragraph", "shortAnswer", "yes/no", "dropdown", "multipleChoice", "date", "number", "fileUpload", "videoQuestion"],
+      default: "Paragraph"
+    },
+    question: {
+      type: String,
+      default: ""
+    },
+    choices: [
+      {
+        type: String,
+        default: ""
+      }
+    ],
+    maxChoice: {
+      type: Number,
+      default: 0
+    },
+    disqualify: {
+      type: Boolean,
+      default: false
+    },
+    other: {
+      type: Boolean,
+      default: false
     }
-  ]
+  }
 })
 
 const PersonalInfo = mongoose.model('PersonalInfo', personalInfoSchema)
