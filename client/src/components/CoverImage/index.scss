@@ -97,4 +97,15 @@
     padding: 2.6rem 2.7rem;
     cursor: pointer;
   }
+
+  .uploadBtn{
+    display: flex;
+    flex-direction: column;
+    justify-items: center; 
+    align-items: center; 
+
+    // &:hover + .uploadContainer{
+    //     border: 1px dashed #a80000;
+    // }
+  }
 }

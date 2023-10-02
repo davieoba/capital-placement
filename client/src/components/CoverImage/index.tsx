@@ -25,7 +25,7 @@ export const CoverImage = () => {
   }
 
   const uploadButton = (
-    <div style={{ display: 'flex', flexDirection: 'column', justifyItems: 'center', alignItems: 'center' }}>
+    <div className='uploadBtn'>
       <UploadTrayIcon className='upload_icon' />
       <div style={{ fontSize: '14px', fontWeight: 600, fontFamily: 'poppins' }}>Upload Cover Image</div>
       <p className='upload_info'>16:9 ratio is recommended. Max image size 1mb</p>
@@ -39,7 +39,7 @@ export const CoverImage = () => {
       ) : (
         <div className="coverImage">
             <header className="cover-image_header">
-            <h3>Upload Cover Image</h3>
+              <h3>Upload Cover Image</h3>
             </header>
           <div className='content'>
             <div className='uploadContainer'>

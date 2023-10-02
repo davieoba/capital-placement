@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 :root {
   --font-family: poppins, sans-serif;
     /* font-family: poppins, system-ui, Avenir, Helvetica, Arial, sans-serif; */
@@ -24,3 +26,23 @@ body {
   font-family: poppins;
 }
 
+button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  outline: none;
+}
+
+.App {
+  display: flex;
+}
+
+main {
+  padding-top: 12.3rem;
+  padding-left: 6.95rem;
+  width: 100%;
+}

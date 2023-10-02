@@ -48,7 +48,7 @@ export const PersonalProfile = () => {
 
             <div className='add-question-container'>
               <div className=''>
-                <PlusOutlined style={{ fontSize: '3.2rem' }} />
+                <PlusOutlined style={{ fontSize: '2.4rem' }} />
                 <label className=''>Add a question</label>
               </div>
             </div>

@@ -1,0 +1,115 @@
+// paragraph question
+.Paragraph {
+  label {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+  }
+
+  // select {
+  //   color: #d0f7fa;
+  //   font-size: 1.4rem;
+  // }
+}
+
+.MultipleChoice {
+  > div {
+    margin-bottom: 2.9rem;
+  }
+
+  .question {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  .add-question {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+    margin-bottom: 2.4rem;
+  }
+
+  .add-question-label {
+    margin-left: 4.4rem;
+    margin-bottom: 0.8rem;
+    font-size: 2rem;
+    font-weight: 500;
+  }
+
+  .enable-question {
+    display: flex;
+    gap: 0.8rem;
+    margin-bottom: 5rem;
+
+    label {
+      font-size: 1.4rem;
+      font-weight: 400;
+    }
+  }
+
+  .max-choice {
+    label {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 1.1rem;
+    }
+  }
+}
+
+.Dropdown {
+  > div {
+    margin-bottom: 2.9rem;
+  }
+
+  .question {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  .add-question {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+    margin-bottom: 2.4rem;
+  }
+
+  .add-question-label {
+    margin-left: 4.4rem;
+    margin-bottom: 0.8rem;
+    font-size: 2rem;
+    font-weight: 500;
+  }
+
+  .enable-question {
+    display: flex;
+    gap: 0.8rem;
+    margin-bottom: 5rem;
+
+    label {
+      font-size: 1.4rem;
+      font-weight: 400;
+    }
+  }
+}
+
+.Boolean {
+   label {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+  }
+
+  .question{
+    margin-bottom: 2.5rem;
+  }
+
+  .disqualify-option {
+    display: flex;
+    gap: 1.1rem;
+    
+    label{
+      font-weight: 400;
+      font-size: 1.4rem;
+    }
+  }
+}

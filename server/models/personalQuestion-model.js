@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const personalQuestionSchema = new mongoose.Schema({
   type: {
     type: String,
-    enum: ["Paragraph"],
+    enum: ["paragraph", "shortAnswer", "yes/no", "dropdown", "multipleChoice", "date", "number", "fileUpload", "videoQuestion"],
     default: "Paragraph"
   },
   question: {

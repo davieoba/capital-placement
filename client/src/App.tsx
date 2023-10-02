@@ -1,15 +1,22 @@
-// import { CoverImage } from "./components/CoverImage"
-// import { PersonalInformation } from "./components/PersonalInfo"
+import { CoverImage } from "./components/CoverImage"
+import { PersonalInformation } from "./components/PersonalInfo"
 import { PersonalProfile } from "./components/PersonalProfile"
+
+// import { AdditionalQuestion } from "./components/AdditionalQuestion"
+import { Sidebar } from "./components/Sidebar"
 
 function App() {
 
   return (
-    <>
-      {/* <CoverImage /> */}
-      {/* <PersonalInformation /> */}
-      <PersonalProfile />
-    </>
+    <div className="App">
+      <Sidebar />
+      <main className="main space-y-12">
+        <CoverImage />
+        <PersonalInformation />
+        <PersonalProfile />
+        {/* <AdditionalQuestion /> */}
+      </main>
+    </div>
   )
 }
 
