@@ -1,19 +1,18 @@
 import { useState } from 'react'
-import { Checkbox } from 'antd'
-import type { CheckboxChangeEvent } from 'antd/es/checkbox'
 import { PlusOutlined } from '@ant-design/icons'
 import { v4 as uuidv4 } from 'uuid';
 
 import './index.scss'
 import { SwitchContainer } from '../SwitchContainer'
 import { AdditionalQuestion } from '../AdditionalQuestion'
+import { Checkbox } from '../Checkbox'
 
 export const PersonalInformation = () => {
   const [addForm, setAddForm] = useState<string | null>(null)
 
-  const onChange = (e: CheckboxChangeEvent) => {
-    console.log(`checked = ${e.target.checked}`)
-  }
+  // const onChange = (e: CheckboxChangeEvent) => {
+  //   console.log(`checked = ${e.target.checked}`)
+  // }
 
   return (
     <div className="PersonalInfo max-w-[59rem] shadow-personal-info rounded-[2rem]">
@@ -40,7 +39,14 @@ export const PersonalInformation = () => {
               <label>Phone <span className=''>without dial code</span></label>
 
               <div className='wrapper'>
-                <Checkbox onChange={onChange}>Internal</Checkbox>
+                <div className='flex items-center gap-x-[0.3rem]'>
+                  <Checkbox />
+                  <label className='text-[1.5rem]'>
+                    Internal
+                  </label>
+                </div>
+
+                {/* <input type='checkbox' className='accent-save-btn w-[1.8rem] h-[1.8rem] rounded-[0.4rem] border-global-checkbox border' /> */}
                 <SwitchContainer />
               </div>
             </div>
@@ -49,7 +55,12 @@ export const PersonalInformation = () => {
               <label>Nationality </label>
 
               <div className='wrapper'>
-                <Checkbox onChange={onChange}>Internal</Checkbox>
+                <div className='flex items-center gap-x-[0.3rem]'>
+                  <Checkbox />
+                  <label className='text-[1.5rem]'>
+                    Internal
+                  </label>
+                </div>
                 <SwitchContainer />
               </div>
             </div>
@@ -58,7 +69,12 @@ export const PersonalInformation = () => {
               <label>Current Residence </label>
 
               <div className='wrapper'>
-                <Checkbox onChange={onChange}>Internal</Checkbox>
+                <div className='flex items-center gap-x-[0.3rem]'>
+                  <Checkbox />
+                  <label className='text-[1.5rem]'>
+                    Internal
+                  </label>
+                </div>
                 <SwitchContainer />
               </div>
             </div>
@@ -67,7 +83,12 @@ export const PersonalInformation = () => {
               <label>ID Number </label>
 
               <div className='wrapper'>
-                <Checkbox onChange={onChange}>Internal</Checkbox>
+                <div className='flex items-center gap-x-[0.3rem]'>
+                  <Checkbox />
+                  <label className='text-[1.5rem]'>
+                    Internal
+                  </label>
+                </div>
                 <SwitchContainer />
               </div>
             </div>
@@ -76,7 +97,12 @@ export const PersonalInformation = () => {
               <label>Date of Birth </label>
 
               <div className='wrapper'>
-                <Checkbox onChange={onChange}>Internal</Checkbox>
+                <div className='flex items-center gap-x-[0.3rem]'>
+                  <Checkbox />
+                  <label className='text-[1.5rem]'>
+                    Internal
+                  </label>
+                </div>
                 <SwitchContainer />
               </div>
             </div>
@@ -85,7 +111,12 @@ export const PersonalInformation = () => {
               <label>Gender </label>
 
               <div className='wrapper'>
-                <Checkbox onChange={onChange}>Internal</Checkbox>
+                <div className='flex items-center gap-x-[0.3rem]'>
+                  <Checkbox />
+                  <label className='text-[1.5rem]'>
+                    Internal
+                  </label>
+                </div>
                 <SwitchContainer />
               </div>
             </div>

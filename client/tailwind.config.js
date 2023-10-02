@@ -14,6 +14,9 @@ export default {
       },
       colors: {
         'save-btn': '#087b2f'
+      },
+      borderColor: {
+        'global-checkbox': '#D4D9E4'
       }
     },
   },
